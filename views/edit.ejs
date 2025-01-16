@@ -1,0 +1,41 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <h3 class="text-center mt-3 mb-4">Enter the new details of the place</h3>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <form method="POST" action="/listin/<%= list._id %>?_method=PUT">
+                    <div class="mb-3">
+                        <label for="title" class="form-label"><b>Title</b></label>
+                        <input type="text" name="listing[title]" value="<%=list.title%>" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label"><b>Description</b></label>
+                        <textarea name="listing[description]" class="form-control"><%=list.description%></textarea>
+                    </div>
+                    <div class="mb-3"> 
+                        <label for="image" class="form-label"><b>Image</b></label>
+                        <input type="text" name="listing[image]" value="<%=list.image%>" class="form-control">
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-6">
+                            <label for="location" class="form-label"><b>Location</b></label>
+                            <input type="text" name="listing[location]" value="<%=list.location%>" class="form-control">
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label for="country" class="form-label"><b>Country</b></label>
+                            <input type="text" name="listing[country]" value="<%=list.country%>" class="form-control">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label"><b>Price</b></label>
+                        <input type="number" name="listing[price]" value="<%=list.price%>" class="form-control">
+                    </div>
+
+                    <button type="submit" class="btn btn-success mb-3">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
